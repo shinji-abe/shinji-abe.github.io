@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Security along DesigN</title>
+    <link>http://www.security-design.jp/</link>
+    <description>Recent content on Security along DesigN</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <copyright>&amp;copy;2017 Shinji Abe</copyright>
+    <lastBuildDate>Sat, 27 May 2017 09:30:00 +0900</lastBuildDate>
+    
+	<atom:link href="http://www.security-design.jp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hugo &#43; githab pages &#43; 独自ドメインでサイト構築</title>
+      <link>http://www.security-design.jp/portfolio/2017052701/</link>
+      <pubDate>Sat, 27 May 2017 09:30:00 +0900</pubDate>
+      
+      <guid>http://www.security-design.jp/portfolio/2017052701/</guid>
+      <description>&lt;p&gt;当初、はてなブログを利用させていただいてましたが、アイコン配布サイトという用途には合わず（そりゃそうだ）、せっかくだからやったことないことしてみようと思って、静的サイトジェネレーターを使ってみました。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>攻撃者 / Attacker</title>
+      <link>http://www.security-design.jp/portfolio/attacker/</link>
+      <pubDate>Tue, 30 May 2017 00:00:00 +0900</pubDate>
+      
+      <guid>http://www.security-design.jp/portfolio/attacker/</guid>
+      <description>&lt;p&gt;なぜ悪役の帽子は黒いのか？&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

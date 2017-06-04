@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Black on Security along DesigN</title>
+    <link>http://www.security-design.jp/tags/black/</link>
+    <description>Recent content in Black on Security along DesigN</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <copyright>&amp;copy;2017 Shinji Abe</copyright>
+    <lastBuildDate>Tue, 30 May 2017 00:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="http://www.security-design.jp/tags/black/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>攻撃者 / Attacker</title>
+      <link>http://www.security-design.jp/portfolio/attacker/</link>
+      <pubDate>Tue, 30 May 2017 00:00:00 +0900</pubDate>
+      
+      <guid>http://www.security-design.jp/portfolio/attacker/</guid>
+      <description>&lt;p&gt;なぜ悪役の帽子は黒いのか？&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
