@@ -1,7 +1,7 @@
 /* Creative portfolio */
 
 body .box-masonry .box-masonry-image {
-  background: #ffffff;
+  background: #ffffff !important;
 }
 
 .sidebar-heading h1 {
