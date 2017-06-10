@@ -1,5 +1,9 @@
 /* Creative portfolio */
 
+body .box-masonry .box-masonry-image {
+  background: #f9f9f9f9;
+}
+
 .sidebar-heading h1 {
   text-decoration: none !important;
 }
@@ -51,9 +55,7 @@ li p {
   margin-bottom: 2px;
 }
 
-.box-masonry .box-masonry-image {
-  background: #f4f4f4;
-}
+
 
 #sns {
     display: inline-block;
