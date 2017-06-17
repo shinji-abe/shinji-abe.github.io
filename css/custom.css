@@ -99,3 +99,16 @@ li p {
 	content: '.';
 }
 .clearfix { zoom: 1; }
+
+/* google search */
+input.gsc-search-button {
+  box-sizing: content-box; }
+
+table.gsc-search-box td {
+  vertical-align: top!important; }
+
+.gsc-input-box {
+  height: 27px!important; }
+
+input.gsc-search-button-v2 {
+  margin-top: 0!important; }
