@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Daiguard on Security along DesigN</title>
+    <link>http://www.security-design.jp/tags/daiguard/</link>
+    <description>Recent content in Daiguard on Security along DesigN</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <copyright>&amp;copy;2017 Shinji Abe</copyright>
+    <lastBuildDate>Mon, 19 Jun 2017 09:30:00 +0900</lastBuildDate>
+    
+	<atom:link href="http://www.security-design.jp/tags/daiguard/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>アニメ「ダイ・ガード」から学ぶ、セキュリティ対応 #00</title>
+      <link>http://www.security-design.jp/portfolio/learn_from_daiguard_00/</link>
+      <pubDate>Mon, 19 Jun 2017 09:30:00 +0900</pubDate>
+      
+      <guid>http://www.security-design.jp/portfolio/learn_from_daiguard_00/</guid>
+      <description>&lt;p&gt;みなさんは&lt;strong&gt;「ダイ・ガード」&lt;/strong&gt; というアニメをご存知でしょうか。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

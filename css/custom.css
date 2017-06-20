@@ -55,7 +55,19 @@ li p {
   margin-bottom: 2px;
 }
 
+.ama {
+  display: inline-block;
+  float: left;
+  margin-right: 20px;
+}
 
+.content-column-content h2 {
+  font-size: 170%;
+}
+
+.content-column-content img {
+  width:100%;
+}
 
 #sns {
     display: inline-block;
