@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@shinji_abe">
+<meta name="twitter:creator" content="@">
+<meta name="twitter:url" content="http://www.security-design.jp/portfolio/learn_from_daiguard_01/">
+
+
+
+  <title>アニメ「ダイ・ガード」から学ぶ、セキュリティ対応 #01 - Security along DesigN</title>
+  <meta name="twitter:title" content="アニメ「ダイ・ガード」から学ぶ、セキュリティ対応 #01 - Security along DesigN">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="all,follow">
+<meta name="googlebot" content="index,follow,snippet,archive">
+<link rel="stylesheet" href="http://www.security-design.jp/css/bootstrap.min.css">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,300,700,400italic">
+<link rel="stylesheet" href="http://www.security-design.jp/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://www.security-design.jp/css/owl.carousel.css">
+<link rel="stylesheet" href="http://www.security-design.jp/css/owl.theme.css">
+
+
+  <link href="http://www.security-design.jp/css/style.sea.css" rel="stylesheet" id="theme-stylesheet">
+
+
+<link href="http://www.security-design.jp/css/custom.css" rel="stylesheet">
+<link rel="shortcut icon" href="http://www.security-design.jp/img/favicon.png">
+<link rel="icon" href="http://www.security-design.jp/img/favicon.ico">
+<link rel="apple-touch-icon" href="img/favicon.png">
+
+
+  <meta property="og:image" content="http://www.security-design.jp/img/portfolio/DAIGUARD_01.png">
+  <meta property="twitter:image" content="http://www.security-design.jp/img/portfolio/DAIGUARD_01.png">
+
+
+
+  <meta name="description" content="本題に入る前に、おさらい。前回読んでない人はこちらから。...">
+  <meta property="og:description" content="本題に入る前に、おさらい。前回読んでない人はこちらから。...">
+  <meta name="twitter:description" content="本題に入る前に、おさらい。前回読んでない人はこちらから。...">
+
+
+
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-100085397-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+</head>
+<body>
+  <div id="all">
+      <div class="container-fluid">
+          <div class="row row-offcanvas row-offcanvas-left">
+              <div id="sidebar" class="col-xs-6 col-sm-4 col-md-3 sidebar-offcanvas">
+  <div class="sidebar-content">
+    <h1 class="sidebar-heading"><a href="http://www.security-design.jp/"><img src="http://www.security-design.jp/img/logo_title.png" alt="Security along DesigN" style="object-fit: contain; width: 100%;margin-top:5px;" /></a></h1>
+
+    <script>
+      (function() {
+        var cx = '004520499936940860837:0ywsmns6ywe';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = true;
+        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+      })();
+    </script>
+    <gcse:search></gcse:search>
+
+
+    
+      <p class="sidebar-p">サラリーマンだって、平和を守れるんだ！</p>
+    
+      <p class="sidebar-p"></p>
+    
+    <ul class="sidebar-menu">
+      
+      
+        <li><a href="http://www.security-design.jp/">home</a></li>
+      
+        <li><a href="http://www.security-design.jp/about/">about</a></li>
+      
+        <li><a href="http://www.security-design.jp/tags/icon/">icon</a></li>
+      
+        <li><a href="http://www.security-design.jp/tags/blog/">blog</a></li>
+      
+        <li><a href="http://www.security-design.jp/contact/">contact</a></li>
+      
+    </ul>
+
+
+
+
+    <p class="social">
+  
+  <a href="https://www.facebook.com/abeshinji" data-animate-hover="pulse" class="external facebook">
+    <i class="fa fa-facebook"></i>
+  </a>
+  
+  
+  
+  <a href="https://twitter.com/shinji_abe" data-animate-hover="pulse" class="external twitter">
+    <i class="fa fa-twitter"></i>
+  </a>
+  
+  
+  
+  
+  
+  
+</p>
+
+
+    <div class="copyright">
+      <p class="credit">
+        
+          &copy;2017 Shinji Abe
+        
+        | Template by <a href="https://bootstrapious.com/free-templates" class="external">Bootstrapious.com</a>
+
+&amp; ported to Hugo by <a href="https://github.com/kishaningithub">Kishan B</a> &amp; customized by Shinji Abe
+
+      </p>
+    </div>
+  </div>
+</div>
+
+              
+<div class="col-xs-12 col-sm-8 col-md-9 content-column white-background">
+  <div class="small-navbar visible-xs">
+  <button type="button" data-toggle="offcanvas" class="btn btn-ghost pull-left"> <i class="fa fa-align-left"> </i>Menu</button>
+  <h1 class="small-navbar-heading"><img src="http://www.security-design.jp/img/logo_title.png" alt="Security along DesigN" style="object-fit: contain; width: 100%; margin-top:-12px;" /></h1>
+</div>
+
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="content-column-content">
+         <h1>アニメ「ダイ・ガード」から学ぶ、セキュリティ対応 #01</h1>
+
+         <p>
+          <a href="tags/blog">#blog</a>
+         
+          <a href="tags/daiguard">#DAIGUARD</a>
+         </p>
+
+         <p>2017-07-03 01:00</p>
+         
+         <p>本題に入る前に、おさらい。前回読んでない人は<a href="http://www.security-design.jp/portfolio/learn_from_daiguard_00/">こちらから</a>。</p>
+
+<p>このアニメでは、2018年に起きたヘテロダインと呼ばれる謎の物体（怪獣みたいなもの）の襲来を「災害」ととらえ、その再発に備えて、国連安全保障軍がロボット「ダイ・ガード」を造ったもののしばらく何も起こらなかったため、2030年現在、民間の企業「21世紀警備保障」に移管、管理中という設定になっています。ちなみに「管理」といっても12年間も何も起きなかったので、ダイ・ガードは見世物としてお台場のガンダムのような扱いになっている状況です。</p>
+
+<p>主要な登場人物紹介。</p>
+
+<ul>
+<li><p>赤木 駿介（主人公）：</p>
+
+<ul>
+<li>誰かを助けるためならどんな無茶でもする熱血タイプ。ちなみにダイ・ガードは後述の桃井、青山との３名で搭乗し操作する。</li>
+</ul></li>
+
+<li><p>桃井 いぶき：</p>
+
+<ul>
+<li>紅一点。男勝りな面もあるが、複雑な家庭環境もあり、センシティブな部分もある。2018年の災害の被災者。</li>
+</ul></li>
+
+<li><p>青山 圭一郎：</p>
+
+<ul>
+<li>イケメン。冷静沈着な性格で、赤木と桃井をうまくコントロールする立ち位置になることが多い。一見チャラいようで母親想いの真面目な青年。</li>
+</ul></li>
+
+<li><p>大杉 春男（課長）：</p>
+
+<ul>
+<li>「昼行灯」っぽい感じだが、実力は本物。「21世紀警備保障」へのダイ・ガード移管を推進した立役者の一人。いわゆる「橋渡し人材」。2018年は安保軍に所属。その時の上官が後述する大河内。</li>
+</ul></li>
+
+<li><p>大河内 伝次郎（社長）：</p>
+
+<ul>
+<li>2018年の災害で安保軍の現場指揮官として非情な目に遭った人物。右目の傷もその当時のもの。「21世紀警備保障」にダイ・ガードもたらしたのは彼の計画。</li>
+</ul></li>
+</ul>
+
+<p>とりあえず今回はこの５名は覚えていただけると、以降読みやすいかと。</p>
+
+<h1 id="突然のインシデント発生で問われること">突然のインシデント発生で問われること</h1>
+
+<p>前回お話しした通り、<strong>セキュリティ対応実行サイクル</strong>は全くもって回っていない状態でしたので、突然のインシデント発生において試されるのは、「導入」時点の内容とそれがどれだけ「生きた」状態にあるかです。つまり、<strong>機能A. セキュリティ対応組織運営</strong>が機能を残しているかどうかが問われます。</p>
+
+<blockquote>
+<p>A. セキュリティ対応組織運営</p>
+
+<p>セキュリティ対応するに当たって、取り扱うべき事象や対応範囲、トリアージ（対応優先度）基準などの、セキュリティ対応における全体方針を管理したり、必要となるリソース計画を行ったりする機能である。セキュリティ対応の安定的な運営を目的とする。</p>
+</blockquote>
+
+<p>その点、この「21世紀警備保障」は12年と言う歳月の割に、きちんと導入時点の組織運営がまともに機能しています。</p>
+
+<p>例えば、富士山頂観測所での異常検知（このアニメにおいては「界震」と呼ばれる時空間でのエネルギー振動がヘテロダイン出現の予兆として検知されます。）が直ちに「21世紀警備保障情報センター」へ伝達され役員会の招集までが実にスムーズに実施されました。いわば、SOC→CSIRT→CISOという伝達はほぼ完璧に実行された状態です。</p>
+
+<p>しかしこれは決して磐石なものではなく、社長である<strong>大河内</strong>が実質的なCISOとして、強力な&rdquo;属人体制&rdquo;で乗り切ったに過ぎません。&rdquo;特定の人材&rdquo;に依存する運用はその場その場では強いですが、長期的に見ると非常に脆弱な体制です…このアニメでも例外ではなく、のちのち大きな問題を引き起こします…</p>
+
+<h1 id="名ばかり役員会">名ばかり役員会</h1>
+
+<p>さて、きちんとルール通り開催された役員会ですが、前述の通り、セキュリティに対し想いがあるのは<strong>大河内</strong>本人しかいませんので、他のメンバーはグダグダです。現時点ではまだ「異常検知」のみで、ヘテロダインは出現していません。（なんか危なそうな攻撃検知したけど、情報漏洩とかヤバい被害はなさそうな状況、とでも言いましょうか。）</p>
+
+<p>「またいつもの空騒ぎじゃないのかね？」</p>
+
+<p>この発言から、<strong>機能B. リアルタイムアナリシス（即時分析）</strong>の精度に問題があり、誤検知あるいは過検知が頻発していたことが伺われます。ここのところ「相模湾沖で群発していた」と言うようなセリフもあり、念のための招集が過剰になってしまったのかもしれません。</p>
+
+<p>「それぐらいの界震なら今までにもあったのでは」</p>
+
+<p>「この12年間何ごとも起きなかったじゃないか、今さら何も起きるわけがないよ」</p>
+
+<p>「そもそもなぜ我々が集まらねばならんのかね」</p>
+
+<p>「我々はいつ解放してもらえるのかな？」</p>
+
+<p>やる気ねぇな 笑。って、でもこれ笑い事ではなくて、いわゆる<strong>「正常性バイアス」と呼ばれる心理的な効果で、リスクを過小に評価してしまうケース</strong>です。この役員会では「多数派同調バイアス」や「楽観主義バイアス」もかかってしまっていて、全体的に危機感が限りなく薄い状態になってしまっています。</p>
+
+<p>で何が起こるかと言うと、本筋とは関係のない「政治ごっこ」です。
+役員会がなくてもダイ・ガードを動かせるようにできるよう今の定款の変更を求め権力拡大を狙う輩が出てきたりするわけです。（もちろんそれに反対する役員もいるので、この場ではどうにもならないのですが。）</p>
+
+<p>なお、<strong>大河内</strong>はこの流れは読めていたらしく、実は<strong>先手</strong>を打っていました。</p>
+
+<h1 id="ヘテロダインの出現とoodaループ">ヘテロダインの出現とOODAループ</h1>
+
+<p>役員会ではリスクを過小評価し何らアクションを起こしていません。できればここから短期的なPDCA（どのように対応するか計画し、それを実施、反省を踏まえ、次の対応に備える）が回ると良いのですが、見た感じ期待できそうにない…そんな中、<strong>大河内</strong>は、「営業イベント」という名目で相模湾沖の小さな街にダイ・ガードを送り込み、万が一に備えさせました<sup class="footnote-ref" id="fnref:1"><a rel="footnote" href="#fn:1">1</a></sup>。</p>
+
+<p>そしてとうとうヘテロダインが出現してしまいます。</p>
+
+<p>「状況は？状況はどうなっているの？」と、とたんにマジになる役員会。</p>
+
+<p>ついに、ダイ・ガードの出動を決定！</p>
+
+<p>ではなく、「撤退」を決定。</p>
+
+<p>が、主人公赤木が黙っているわけもなく、現場での課長の大杉とイケメン青山の説得虚しく、すぐにでもダイ・ガードを出動させようとする赤木。</p>
+
+<p>そこに突如現れ、直ちに避難撤退するよう圧力をかける国連安保軍幕僚本部の<strong>城田</strong>。ちなみに国連安保軍が21世紀警備保障の筆頭株主でもあり、まぁ組織的な上下関係は明白…課長の大杉は安保軍出身なのでその辺は嫌という程理解しているはず。</p>
+
+<p>なのですが、大杉は「あいつ言うこと聞かなくって…」とこれまでとは<strong>打って変わって赤木を止めず</strong>、その後、悪化する状況に正義感を揺さぶられた桃井と青山も結局ダイ・ガードに搭乗します。</p>
+
+<p>このあたりの流れ、特に大杉の行動は不自然に見えますが、先の大河内の判断（営業と称し、独断でダイ・ガードを現場に配備した）を合わせて考えると合点がいきます。</p>
+
+<p>これは<a href="https://ja.wikipedia.org/wiki/OODA%E3%83%AB%E3%83%BC%E3%83%97">OODAループ</a>なのです。</p>
+
+<p>ある状況下において、対象（今回の場合ヘテロダイン）を<strong>「監視: Observe」</strong>し、<strong>「情勢判断: Orient」</strong>を行い（状況を認識して、その時の情報や経験からどのような事態なのか判断をする）、そこから<strong>「意思決定: Decide」</strong>し、<strong>「行動: Act」</strong>に繋げると言う、アメリカ空軍のジョン・ボイド大佐によって提唱された意思決定理論です。</p>
+
+<p>軍事用語ということもあり、正しく説明するのはとても難しいので（僕自身、軍隊経験もなく理解しきれている気がしない…）、雰囲気だけお伝えする感じになってしまいますが、この理論のキモの一つが、その<strong>ループをいかに早く回すか</strong>ということです。敵も同じループを回しているとして、それより早くループを回せるかで勝負が決まります。（というかどちらかが倒れるまで互いにループが回り続けます。）</p>
+
+<p>今回の場合、ヘテロダインが先に行動を開始しています。その後、安保軍が戦闘機による攻撃を仕掛けましたがヘテロダインはそのまま攻撃に転じ、撃ち落とし始めます。<strong>ループは完全にヘテロダインが先行していますので、そのループを一度遅らせる必要があります</strong>。</p>
+
+<p>まだ敵に認知されていないダイ・ガードが動けば、敵の「監視: Observe」と「情勢判断: Orient」がスタックし<strong>「意思決定: Decide」を少し先延ばし</strong>できます。大杉は安保軍時代の経験から、いきなりダイ・ガードをぶつけるのではなく（戦闘経験のないパイロットたちなのでリスクが高すぎると判断した）、おそらく、ヘテロダインに安保軍が攻撃することを読み、その直後のタイミングを狙ってダイ・ガードのOODAループを回すことで、敵を翻弄し、被害を極小化したかったのでしょう。そしてそのダイ・ガード出撃は、大河内のかなり早い段階でのOODA（界震群発→相模沖の危険を認識→営業と称した先行配置決定、実行）があったからこそ選択可能となったオプションだったわけです。</p>
+
+<p>ですが、初出撃でそんなにうまくいくわけもなく…って、あれ、第一話まだ終わってないのにこの文量…まぁ最初は色々説明もしなくちゃいけないし、仕方ないか…ということで一旦このへんで。</p>
+
+<p>次回、&rdquo;アニメ「ダイ・ガード」から学ぶ、セキュリティ対応 #02&rdquo;。<strong>サラリーマンだって、平和を守れるんだ！</strong></p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1">ちなみに、主人公含め今回の営業にそんな意図があることは誰も知りません。意図がバレれば、ダイ・ガードの「出動」として役員会付議が必須となってしまいます。たぶんそれだと否決され、無理を通せば「職権乱用！」と足を引っ張ってくる勢力がいることを大河内としては重々承知していたわけで、こうするしかなかったのでしょうね。
+ <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+</ol>
+</div>
+         
+      </div>
+      <div id="sns">
+  <ul class="clearfix">
+    <li class="facebook"><a href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fwww.security-design.jp%2fportfolio%2flearn_from_daiguard_01%2f&t=%e3%82%a2%e3%83%8b%e3%83%a1%e3%80%8c%e3%83%80%e3%82%a4%e3%83%bb%e3%82%ac%e3%83%bc%e3%83%89%e3%80%8d%e3%81%8b%e3%82%89%e5%ad%a6%e3%81%b6%e3%80%81%e3%82%bb%e3%82%ad%e3%83%a5%e3%83%aa%e3%83%86%e3%82%a3%e5%af%be%e5%bf%9c%20%2301 - Security%20along%20DesigN" title="facebook" rel="nofollow" target="_blank">Facebook</a></li>
+    <li class="hatena"><a href="http://b.hatena.ne.jp/add?mode=confirm&url=http%3a%2f%2fwww.security-design.jp%2fportfolio%2flearn_from_daiguard_01%2f&title=%e3%82%a2%e3%83%8b%e3%83%a1%e3%80%8c%e3%83%80%e3%82%a4%e3%83%bb%e3%82%ac%e3%83%bc%e3%83%89%e3%80%8d%e3%81%8b%e3%82%89%e5%ad%a6%e3%81%b6%e3%80%81%e3%82%bb%e3%82%ad%e3%83%a5%e3%83%aa%e3%83%86%e3%82%a3%e5%af%be%e5%bf%9c%20%2301 - Security%20along%20DesigN" title="hatenabookmark" rel="nofollow" target="_blank">はてブ</a></li>
+    <li class="twitter"><a href="http://twitter.com/share?url=http%3a%2f%2fwww.security-design.jp%2fportfolio%2flearn_from_daiguard_01%2f&amp;text=%e3%82%a2%e3%83%8b%e3%83%a1%e3%80%8c%e3%83%80%e3%82%a4%e3%83%bb%e3%82%ac%e3%83%bc%e3%83%89%e3%80%8d%e3%81%8b%e3%82%89%e5%ad%a6%e3%81%b6%e3%80%81%e3%82%bb%e3%82%ad%e3%83%a5%e3%83%aa%e3%83%86%e3%82%a3%e5%af%be%e5%bf%9c%20%2301 - Security%20along%20DesigN" title="twitter" rel="nofollow" target="_blank">twitter</a></li>
+    <li class="line"><a href="http://line.naver.jp/R/msg/text/?%e3%82%a2%e3%83%8b%e3%83%a1%e3%80%8c%e3%83%80%e3%82%a4%e3%83%bb%e3%82%ac%e3%83%bc%e3%83%89%e3%80%8d%e3%81%8b%e3%82%89%e5%ad%a6%e3%81%b6%e3%80%81%e3%82%bb%e3%82%ad%e3%83%a5%e3%83%aa%e3%83%86%e3%82%a3%e5%af%be%e5%bf%9c%20%2301 - Security%20along%20DesigN%0D%0Ahttp%3a%2f%2fwww.security-design.jp%2fportfolio%2flearn_from_daiguard_01%2f" title="line" rel="nofollow" target="_blank">LINE</a></li>
+    <li class="feedly"><a href='http://cloud.feedly.com/#subscription%2Ffeed%2F' title="feedly" rel="nofollow" target="_blank">Feedly</a></li>
+    <li class="rss"><a href="" title="rss" target="_blank">RSS</a></li>
+    <li class="google"><a href="https://plus.google.com/share?url=http%3a%2f%2fwww.security-design.jp%2fportfolio%2flearn_from_daiguard_01%2f" title="googleplus" rel="nofollow" target="_blank">google+</a></li>
+    <li class="pocket"><a href="http://getpocket.com/edit?url=http%3a%2f%2fwww.security-design.jp%2fportfolio%2flearn_from_daiguard_01%2f&title=%e3%82%a2%e3%83%8b%e3%83%a1%e3%80%8c%e3%83%80%e3%82%a4%e3%83%bb%e3%82%ac%e3%83%bc%e3%83%89%e3%80%8d%e3%81%8b%e3%82%89%e5%ad%a6%e3%81%b6%e3%80%81%e3%82%bb%e3%82%ad%e3%83%a5%e3%83%aa%e3%83%86%e3%82%a3%e5%af%be%e5%bf%9c%20%2301 - Security%20along%20DesigN" title="pocket" rel="nofollow" target="_blank">Pocket</a></li>
+  </ul>
+</div>
+
+
+    </div>
+  </div>
+</div>
+
+          </div>
+      </div>
+  </div>
+  <script src="http://www.security-design.jp/js/jquery.min.js"></script>
+<script src="http://www.security-design.jp/js/bootstrap.min.js"></script>
+<script src="http://www.security-design.jp/js/jquery.cookie.js"> </script>
+<script src="http://www.security-design.jp/js/ekko-lightbox.js"></script>
+<script src="http://www.security-design.jp/js/jquery.scrollTo.min.js"></script>
+<script src="http://www.security-design.jp/js/masonry.pkgd.min.js"></script>
+<script src="http://www.security-design.jp/js/imagesloaded.pkgd.min.js"></script>
+<script src="http://www.security-design.jp/js/owl.carousel.min.js"></script>
+<script src="http://www.security-design.jp/js/front.js"></script>
+
+</body>
+</html>
