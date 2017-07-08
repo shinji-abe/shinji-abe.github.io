@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <copyright>&amp;copy;2017 Shinji Abe</copyright>
-    <lastBuildDate>Mon, 03 Jul 2017 01:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 08 Jul 2017 21:40:00 +0900</lastBuildDate>
     
 	<atom:link href="http://www.security-design.jp/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>アニメ「ダイ・ガード」から学ぶ、セキュリティ対応 #02</title>
+      <link>http://www.security-design.jp/portfolio/learn_from_daiguard_02/</link>
+      <pubDate>Sat, 08 Jul 2017 21:40:00 +0900</pubDate>
+      
+      <guid>http://www.security-design.jp/portfolio/learn_from_daiguard_02/</guid>
+      <description>&lt;p&gt;前回読んでない人は&lt;a href=&#34;http://www.security-design.jp/portfolio/learn_from_daiguard_01/&#34;&gt;こちらから&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;前回じっくり書いてしまったので、テンポアップしていきます。今回は第1話の終わりから第3話まで！&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>アニメ「ダイ・ガード」から学ぶ、セキュリティ対応 #01</title>
@@ -19,17 +30,6 @@
       
       <guid>http://www.security-design.jp/portfolio/learn_from_daiguard_01/</guid>
       <description>&lt;p&gt;本題に入る前に、おさらい。前回読んでない人は&lt;a href=&#34;http://www.security-design.jp/portfolio/learn_from_daiguard_00/&#34;&gt;こちらから&lt;/a&gt;。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>アニメ「ダイ・ガード」から学ぶ、セキュリティ対応 #02</title>
-      <link>http://www.security-design.jp/portfolio/learn_from_daiguard_02/</link>
-      <pubDate>Mon, 03 Jul 2017 01:00:00 +0900</pubDate>
-      
-      <guid>http://www.security-design.jp/portfolio/learn_from_daiguard_02/</guid>
-      <description>&lt;p&gt;前回読んでない人は&lt;a href=&#34;http://www.security-design.jp/portfolio/learn_from_daiguard_01/&#34;&gt;こちらから&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;前回じっくり書いてしまったので、テンポアップしていきます。今回は第1話の終わりから第3話まで！&lt;/p&gt;</description>
     </item>
     
     <item>
