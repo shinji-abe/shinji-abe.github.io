@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@shinji_abe">
+<meta name="twitter:creator" content="@">
+<meta name="twitter:url" content="http://www.security-design.jp/portfolio/2017071501/">
+
+
+
+  <title>システム担当とセキュリティ担当をつなぐSysSecOps - Security along DesigN</title>
+  <meta name="twitter:title" content="システム担当とセキュリティ担当をつなぐSysSecOps - Security along DesigN">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="all,follow">
+<meta name="googlebot" content="index,follow,snippet,archive">
+<link rel="stylesheet" href="http://www.security-design.jp/css/bootstrap.min.css">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,300,700,400italic">
+<link rel="stylesheet" href="http://www.security-design.jp/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://www.security-design.jp/css/owl.carousel.css">
+<link rel="stylesheet" href="http://www.security-design.jp/css/owl.theme.css">
+
+
+  <link href="http://www.security-design.jp/css/style.sea.css" rel="stylesheet" id="theme-stylesheet">
+
+
+<link href="http://www.security-design.jp/css/custom.css" rel="stylesheet">
+<link rel="shortcut icon" href="http://www.security-design.jp/img/favicon.png">
+<link rel="icon" href="http://www.security-design.jp/img/favicon.ico">
+<link rel="apple-touch-icon" href="img/favicon.png">
+
+
+  <meta property="og:image" content="http://www.security-design.jp/img/Square-logo.png">
+  <meta property="twitter:image" content="http://www.security-design.jp/img/Square-logo.png">
+
+
+
+  <meta name="description" content="最近耳にした「SysSecOps」という言葉に興味を持ったので調べてみました。 はじめに言ってしまいますが、何のことはない、米国のセキュリティ...">
+  <meta property="og:description" content="最近耳にした「SysSecOps」という言葉に興味を持ったので調べてみました。 はじめに言ってしまいますが、何のことはない、米国のセキュリティ...">
+  <meta name="twitter:description" content="最近耳にした「SysSecOps」という言葉に興味を持ったので調べてみました。 はじめに言ってしまいますが、何のことはない、米国のセキュリティ...">
+
+
+
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-100085397-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+</head>
+<body>
+  <div id="all">
+      <div class="container-fluid">
+          <div class="row row-offcanvas row-offcanvas-left">
+              <div id="sidebar" class="col-xs-6 col-sm-4 col-md-3 sidebar-offcanvas">
+  <div class="sidebar-content">
+    <h1 class="sidebar-heading"><a href="http://www.security-design.jp/"><img src="http://www.security-design.jp/img/logo_title.png" alt="Security along DesigN" style="object-fit: contain; width: 100%;margin-top:5px;" /></a></h1>
+
+    <script>
+      (function() {
+        var cx = '004520499936940860837:0ywsmns6ywe';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = true;
+        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+      })();
+    </script>
+    <gcse:search></gcse:search>
+
+
+    
+      <p class="sidebar-p">サラリーマンだって、平和を守れるんだ！</p>
+    
+      <p class="sidebar-p"></p>
+    
+    <ul class="sidebar-menu">
+      
+      
+        <li><a href="http://www.security-design.jp/">home</a></li>
+      
+        <li><a href="http://www.security-design.jp/about/">about</a></li>
+      
+        <li><a href="http://www.security-design.jp/tags/icon/">icon</a></li>
+      
+        <li><a href="http://www.security-design.jp/tags/blog/">blog</a></li>
+      
+        <li><a href="http://www.security-design.jp/contact/">contact</a></li>
+      
+    </ul>
+
+
+
+
+    <p class="social">
+  
+  <a href="https://www.facebook.com/abeshinji" data-animate-hover="pulse" class="external facebook">
+    <i class="fa fa-facebook"></i>
+  </a>
+  
+  
+  
+  <a href="https://twitter.com/shinji_abe" data-animate-hover="pulse" class="external twitter">
+    <i class="fa fa-twitter"></i>
+  </a>
+  
+  
+  
+  
+  
+  
+</p>
+
+
+    <div class="copyright">
+      <p class="credit">
+        
+          &copy;2017 Shinji Abe
+        
+        | Template by <a href="https://bootstrapious.com/free-templates" class="external">Bootstrapious.com</a>
+
+&amp; ported to Hugo by <a href="https://github.com/kishaningithub">Kishan B</a> &amp; customized by Shinji Abe
+
+      </p>
+    </div>
+  </div>
+</div>
+
+              
+<div class="col-xs-12 col-sm-8 col-md-9 content-column white-background">
+  <div class="small-navbar visible-xs">
+  <button type="button" data-toggle="offcanvas" class="btn btn-ghost pull-left"> <i class="fa fa-align-left"> </i>Menu</button>
+  <h1 class="small-navbar-heading"><img src="http://www.security-design.jp/img/logo_title.png" alt="Security along DesigN" style="object-fit: contain; width: 100%; margin-top:-12px;" /></h1>
+</div>
+
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="content-column-content">
+         <h1>システム担当とセキュリティ担当をつなぐSysSecOps</h1>
+
+         <p>
+          <a href="tags/blog">#blog</a>
+         </p>
+
+         <p>2017-07-15 23:30</p>
+         
+         
+
+<p>最近耳にした「SysSecOps」という言葉に興味を持ったので調べてみました。</p>
+
+<p>はじめに言ってしまいますが、何のことはない、米国のセキュリティ新興企業<a href="https://ziften.com/">Ziften社</a>が生み出したマーケティング用語のようです。</p>
+
+<p>ただ、主張としては理解できるので、まとめておこうかなと。</p>
+
+<p>以降は、主に<a href="http://www.itproportal.com/features/security-and-it-operations-tear-down-those-walls/">Security and IT Operations: Tear down those walls! | ITProPortal</a>の記事を受けて、考えをまとめています。</p>
+
+<h2 id="syssecops-systems-amp-security-operations">SysSecOps: Systems &amp; Security Operations</h2>
+
+<p>意味としては<strong>「システム運用とセキュリティ運用をもっと一体的に」</strong>ということのようですね。</p>
+
+<p>参考記事にも書いてある通り、システム運用とセキュリティ運用は異なるチームが担当していることも多いと思います。ともすると、システム担当はセキュリティ担当を「口うるさい奴ら」、セキュリティ担当はシステム担当のことを「頭のかたい奴ら」なんて思ってしまうくらい距離があったり？なかったり？…私は両方の立場を経験したことがあるので…まぁ立場変わればなんとやらです 笑。</p>
+
+<p>両担当の関係がどうであれ、ひとたびインシデントが発生すれば総力戦で挑むしかなくなるのですが、普段の接点が少ないとバタバタしてスマートに対応できないので、日頃からもっと近い距離感でいることが大事で、ここのところのセキュリティトレンドを見ると、そのきっかけはエンドポイントセキュリティなんじゃないの？というのが彼らの主張です。</p>
+
+<p>色々なセキュリティソリューションが出てきているとはいえ、現状を見ればまだまだネットワークでの境界防御（簡単にいえば、インターネットの出入口をちゃんと守りましょう的な）が主軸になっているわけで、最近日本でも被害が出た&rdquo;Wannacry&rdquo;や、東欧で大きな被害が出た&rdquo;NotPetya&rdquo;なんかは内部拡散したり、限界をみんな感じているはずです。あるいは感染時にサーバとの通信がなく（or 極端に少なく）破壊目的っぽいものもあったり、通信するにしてもTwitterやDropBoxのような正規のサイトを利用するようなものは&rdquo;境界&rdquo;だけ見ていてもなかなかに辛いよなと。ここまでくると、エンドポイントでのセキュリティの高度化を考えざるを得ず、EDR(Endpoint Detection and Response)の導入が流行りそうな気配があるわけです。</p>
+
+<p>企業におけるアンチウイルスソフト導入に関わったことがある人なら直感的に理解できると思いますが、エンドポイントのセキュリティは、ソフトウェアの相性の確認、不具合の対応、パターンファイルの適用、ウイルス検知時の対応など、システム担当とセキュリティ担当が一緒になって考え、動いていかなければならない部分が多いです。EDR製品はより複雑な機能を持ち、難易度の高い検知を行うものですので、その時よりもさらに強い連携が必要になります。</p>
+
+<p>ということで、「SysSecOps」という彼らの主張は、時流をしっかりと捉えた現実的なものかなと思えるわけです。言葉が流行るかどうかはさておき…</p>
+
+<h2 id="syssecopsに必要なこと">SysSecOpsに必要なこと</h2>
+
+<p>これは結局EDRの導入に関して求められることと同一なので、かなり汎用性がある気がします。
+ということで、元記事を引用させていただきます。</p>
+
+<blockquote>
+<ul>
+<li>IT and security professionals are asking for better integration of tools, which requires coordination of organizational budgets and planning</li>
+<li>To achieve SysSecOps integration, systems management and security budgets need to be coordinated across organizational boundaries to plan for the required technology components.</li>
+<li>The emphasis on technology should be toward building coordinated data- collection and analytics engines.</li>
+<li>SysSecOps for endpoints is built on a foundation of endpoint visibility, control and integration within a broader security ecosystem.</li>
+<li>Finally, an integrated SysSecOps strategy needs to be developed and coordinated within the organization – across divisional boundaries including systems management, and security – and driven from the highest levels of the organization.</li>
+</ul>
+</blockquote>
+
+<p>以下は拙訳というか意訳です。</p>
+
+<ul>
+<li>システム担当とセキュリティ担当がより一体的に利用できる仕組みを選びましょう</li>
+<li>導入計画においては、システム担当とセキュリティ担当の組織の垣根を超えた予算取りが必要となります</li>
+<li>技術面では、データ収集（システム担当の領域）と分析エンジン（セキュリティ担当の領域）の連携の構築に重点を置きましょう</li>
+<li>エンドポイントのSysSecOpsは、セキュリティ対応全体の循環において、端末の可視化、制御など統一的な扱いができるようにすることを基本としましょう</li>
+<li>SysSecOpsを完成させるためには、システム担当とセキュリティ担当の境界を超えてやらないといけず、組織の上の方から動かしていく必要もあります</li>
+</ul>
+
+<p>なかなか頑張らないといけないですね。この手の話に巻き込まれそうな気がしている方は、前もって覚悟を決めておきましょう 笑。</p>
+
+         
+      </div>
+      <div id="sns">
+  <ul class="clearfix">
+    <li class="facebook"><a href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fwww.security-design.jp%2fportfolio%2f2017071501%2f&t=%e3%82%b7%e3%82%b9%e3%83%86%e3%83%a0%e6%8b%85%e5%bd%93%e3%81%a8%e3%82%bb%e3%82%ad%e3%83%a5%e3%83%aa%e3%83%86%e3%82%a3%e6%8b%85%e5%bd%93%e3%82%92%e3%81%a4%e3%81%aa%e3%81%90SysSecOps - Security%20along%20DesigN" title="facebook" rel="nofollow" target="_blank">Facebook</a></li>
+    <li class="hatena"><a href="http://b.hatena.ne.jp/add?mode=confirm&url=http%3a%2f%2fwww.security-design.jp%2fportfolio%2f2017071501%2f&title=%e3%82%b7%e3%82%b9%e3%83%86%e3%83%a0%e6%8b%85%e5%bd%93%e3%81%a8%e3%82%bb%e3%82%ad%e3%83%a5%e3%83%aa%e3%83%86%e3%82%a3%e6%8b%85%e5%bd%93%e3%82%92%e3%81%a4%e3%81%aa%e3%81%90SysSecOps - Security%20along%20DesigN" title="hatenabookmark" rel="nofollow" target="_blank">はてブ</a></li>
+    <li class="twitter"><a href="http://twitter.com/share?url=http%3a%2f%2fwww.security-design.jp%2fportfolio%2f2017071501%2f&amp;text=%e3%82%b7%e3%82%b9%e3%83%86%e3%83%a0%e6%8b%85%e5%bd%93%e3%81%a8%e3%82%bb%e3%82%ad%e3%83%a5%e3%83%aa%e3%83%86%e3%82%a3%e6%8b%85%e5%bd%93%e3%82%92%e3%81%a4%e3%81%aa%e3%81%90SysSecOps - Security%20along%20DesigN" title="twitter" rel="nofollow" target="_blank">twitter</a></li>
+    <li class="line"><a href="http://line.naver.jp/R/msg/text/?%e3%82%b7%e3%82%b9%e3%83%86%e3%83%a0%e6%8b%85%e5%bd%93%e3%81%a8%e3%82%bb%e3%82%ad%e3%83%a5%e3%83%aa%e3%83%86%e3%82%a3%e6%8b%85%e5%bd%93%e3%82%92%e3%81%a4%e3%81%aa%e3%81%90SysSecOps - Security%20along%20DesigN%0D%0Ahttp%3a%2f%2fwww.security-design.jp%2fportfolio%2f2017071501%2f" title="line" rel="nofollow" target="_blank">LINE</a></li>
+    <li class="feedly"><a href='http://cloud.feedly.com/#subscription%2Ffeed%2F' title="feedly" rel="nofollow" target="_blank">Feedly</a></li>
+    <li class="rss"><a href="" title="rss" target="_blank">RSS</a></li>
+    <li class="google"><a href="https://plus.google.com/share?url=http%3a%2f%2fwww.security-design.jp%2fportfolio%2f2017071501%2f" title="googleplus" rel="nofollow" target="_blank">google+</a></li>
+    <li class="pocket"><a href="http://getpocket.com/edit?url=http%3a%2f%2fwww.security-design.jp%2fportfolio%2f2017071501%2f&title=%e3%82%b7%e3%82%b9%e3%83%86%e3%83%a0%e6%8b%85%e5%bd%93%e3%81%a8%e3%82%bb%e3%82%ad%e3%83%a5%e3%83%aa%e3%83%86%e3%82%a3%e6%8b%85%e5%bd%93%e3%82%92%e3%81%a4%e3%81%aa%e3%81%90SysSecOps - Security%20along%20DesigN" title="pocket" rel="nofollow" target="_blank">Pocket</a></li>
+  </ul>
+</div>
+
+
+    </div>
+  </div>
+</div>
+
+          </div>
+      </div>
+  </div>
+  <script src="http://www.security-design.jp/js/jquery.min.js"></script>
+<script src="http://www.security-design.jp/js/bootstrap.min.js"></script>
+<script src="http://www.security-design.jp/js/jquery.cookie.js"> </script>
+<script src="http://www.security-design.jp/js/ekko-lightbox.js"></script>
+<script src="http://www.security-design.jp/js/jquery.scrollTo.min.js"></script>
+<script src="http://www.security-design.jp/js/masonry.pkgd.min.js"></script>
+<script src="http://www.security-design.jp/js/imagesloaded.pkgd.min.js"></script>
+<script src="http://www.security-design.jp/js/owl.carousel.min.js"></script>
+<script src="http://www.security-design.jp/js/front.js"></script>
+
+</body>
+</html>
