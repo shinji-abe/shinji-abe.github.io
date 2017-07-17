@@ -46,7 +46,7 @@ body .box-masonry .box-masonry-image {
   text-align: center;
 }
 
-.icon-list dt{
+dl.icon-list {
   width: 200px;
   height: 250px;
 }
