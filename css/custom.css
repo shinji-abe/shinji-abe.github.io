@@ -7,6 +7,10 @@ body .box-masonry .box-masonry-image {
   background-color: #ffffff !important;
 }
 
+.masonry-item {
+  max-width: 300px;
+}
+
 .content-column-content h1 {
   font-size: 180% !important;
 }
