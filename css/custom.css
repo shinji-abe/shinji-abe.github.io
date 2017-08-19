@@ -1,0 +1,52 @@
+
+/* ブログタイトル */
+.header-image-only #blog-title #blog-title-inner {
+   height: 150px !important;
+}
+
+/* メニュー */
+#gnav {
+   margin-bottom: 35px !important;
+}
+
+
+#gnav .menu a {
+   font-size: 15px !important;
+}
+
+/* パンくずリスト */
+#top-box .breadcrumb {
+   border: 0 !important;
+   padding: 0 !important;
+}
+.breadcrumb-inner {
+   margin-left: 2% !important;
+}
+
+/* モジュールタイトルアイコン */
+.hatena-module-title:before {
+   font-family: FontAwesome;
+   content: "\f0c8";
+}
+
+/* iconページ*/
+.icon-list {
+  float: left;
+  padding-right: 2px;
+  text-align: center;
+}
+
+dl.icon-list {
+  width: 200px;
+  height: 250px;
+}
+
+.icon-list dd {
+  float: left;
+  clear: left;
+  margin: 0;
+}
+dl.icon-list:last-of-type {
+  float: none;
+  clear: both;
+}
