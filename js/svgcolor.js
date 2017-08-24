@@ -13,7 +13,7 @@ function svgtopng() {
     var DOMURL = self.URL || self.webkitURL || self;
     var img = new Image();
     var svg = new Blob([data], {
-        type: "image/svg+xml;charset=utf-8"
+        type: "image/svg+xml"
     });
     var url = DOMURL.createObjectURL(svg);
     img.onload = function() {
