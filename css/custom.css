@@ -1,8 +1,11 @@
 
+
 /* ブログタイトル */
 .header-image-only #blog-title #blog-title-inner {
-   height: 150px !important;
+   height: 120px !important;
+   background-image: url("http://static.security-design.jp/img/site/logotitle2.svg") !important;
 }
+
 
 /* メニュー */
 #gnav {
@@ -23,13 +26,30 @@
    margin-left: 2% !important;
 }
 
+/* 記事一覧サムネイル */
+.page-archive .entry-thumb {
+   border: 1px solid #dddddd;
+}
+
 /* モジュールタイトルアイコン */
 .hatena-module-title:before {
    font-family: FontAwesome;
    content: "\f0c8";
 }
 
-/* iconページ*/
+/* バナー */
+.module_banner {
+    border: 5px solid #000000;
+}
+
+/* アイコンページ*/
+.contents_center {
+   text-align: center;
+}
+.static-page-security-icons #main {
+  width: inherit;
+}
+
 .icon-list {
   float: left;
   padding-right: 2px;
@@ -37,8 +57,8 @@
 }
 
 dl.icon-list {
-  width: 200px;
-  height: 250px;
+  width: 160px;
+  height: 220px;
 }
 
 .icon-list dd {
@@ -49,4 +69,9 @@ dl.icon-list {
 dl.icon-list:last-of-type {
   float: none;
   clear: both;
+}
+
+/* 写真素材ページ*/
+.static-page-photos #main {
+  width: inherit;
 }
